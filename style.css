@@ -1,0 +1,22 @@
+body {
+    align-items: center;
+    text-align: center;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    empty-cells: show;
+    padding: 10px;
+    border-collapse: collapse;
+
+}
+
+td {
+    border: 1px solid black;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+
+}
