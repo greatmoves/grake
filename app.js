@@ -8,6 +8,9 @@ const Right = "ArrowRight";
 var gamegrid = document.getElementById("gamegrid");
 var score = document.getElementById("score");
 
+document.getElementById("newGameButton").onmousedown = window.onload;
+
+
 window.addEventListener("keydown", (event) => {
     setTimeout(() => {
         var x = event.key;
@@ -27,9 +30,14 @@ window.addEventListener("keydown", (event) => {
     
     }, 1)
 })
-
 window.onload = () => {
     init();
+}
+
+document.getElementById("newGameButton").onmousedown = start;
+
+function start () {
+    reset();
     loop();
 }
 
@@ -119,8 +127,6 @@ class Snake {
 }
 
 function eatApple() {
-    // console.log(snake.body[snake.body.length -1].x);
-    // console.log(snake.body[snake.body.length -1].y);
     if(snake.body[snake.body.length -1].x == apple.x && snake.body[snake.body.length -1].y == apple.y) {
         snake.body[snake.body.length] = {x: apple.x, y: apple.y};
         num_apples += 1
@@ -130,7 +136,7 @@ function eatApple() {
 }
 
 function hitWall() {
-     var head = {x:snake.body[snake.body.length-1].x, y:snake.body[snake.body.length-1].y}
+    var head = {x:snake.body[snake.body.length-1].x, y:snake.body[snake.body.length-1].y}
     if(head.x < 0 || head.x >= grid_size) {
         // make lose function
         clearInterval(gameloop);
@@ -154,7 +160,21 @@ function init() {
             gamegrid.rows[x].insertCell()
         }
     }
+    gameloop;
+    num_apples = 0;
+    score.innerText = "Score: " + num_apples;
+    snake = new Snake(3,2,1);
+    apple = new Apple();
 
+}
+
+function reset() {
+    for (let index = 0; index < grid_size; index++) {
+        for (let y_index = 0; y_index < grid_size; y_index++) {
+            gamegrid.rows[index].deleteCell(0);
+        }
+    }
+    init();
 }
 
 function draw() {
@@ -181,5 +201,5 @@ function draw() {
 
 var gameloop;
 var num_apples = 0;
-let snake = new Snake(3,0,1);
+let snake = new Snake(3,2,1);
 let apple = new Apple();

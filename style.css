@@ -77,3 +77,10 @@ footer {
 .fa-solid:hover {
     color: #ccffcc;
 }
+
+.newGameButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
