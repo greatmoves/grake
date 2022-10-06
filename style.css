@@ -1,12 +1,41 @@
 body {
-    align-items: center;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-align: center;
+
 }
+
+.links {
+    text-align: center;
+    align-self: center;
+}
+
+a:link {
+    color: rgb(20, 20, 20);
+    text-decoration: none;
+}
+  
+a:visited {
+    color:rgb(20, 20, 20);
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: none;
+}
+  
+a:active {
+    text-decoration: none;
+}
+
 table{
     margin-left: auto;
     margin-right: auto;
     font-size: xx-large;
-    font-family: 'Courier New', Courier, monospace;
     empty-cells: show;
     padding: 10px;
     border-collapse: collapse;
@@ -19,4 +48,32 @@ td {
     width: 40px;
     text-align: center;
 
+}
+
+footer {
+    margin: auto;
+    margin-top: 20px;
+    text-align:center;
+}
+
+.fab  {
+    color: rgb(20, 20, 20);
+    font-size: 50px;
+    margin-left: 10px;
+    text-decoration: none;
+
+}
+.fab:hover {
+    color: #ccffcc;
+    
+}
+
+.fa-solid {
+    color: rgb(20, 20, 20);
+    font-size: 50px;
+    margin-left:10px;
+}
+
+.fa-solid:hover {
+    color: #ccffcc;
 }
